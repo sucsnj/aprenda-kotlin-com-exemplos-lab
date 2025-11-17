@@ -11,12 +11,18 @@ data class ConteudoEducacional(
     val duracao: Int = 60 // duração em minutos
 )
 
-data class Formacao(val nome: String, var conteudos: List<ConteudoEducacional>) {
+// classe para representar a formação do aluno
+data class Formacao(
+    val nome: String,
+    val nivel: Nivel, // nível com base na Enum
+    val conteudos: List<ConteudoEducacional>
+    ) {
 
     val inscritos = mutableListOf<Usuario>()
     
     fun matricular(usuario: Usuario) {
-        // TODO("Utilize o parâmetro $usuario para simular uma matrícula (usar a lista de $inscritos).")
+        inscritos.add(usuario)
+        println("Usuário ${usuario.nome} matriculado na formação $nome.")
     }
 }
 
