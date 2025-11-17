@@ -33,6 +33,29 @@ data class Formacao(
 }
 
 fun main() {
-    // TODO("Analise as classes modeladas para este domínio de aplicação e pense em formas de evoluí-las.")
-    // TODO("Simule alguns cenários de teste. Para isso, crie alguns objetos usando as classes em questão.")
+
+    // os conteúdos educacionais para exemplo
+    val kotlinBasico = ConteudoEducacional("Introdução ao Kotlin", 90)
+    val pooKotlin = ConteudoEducacional("Programação Orientada a Objetos em Kotlin", 120)
+    val colecoesKotlin = ConteudoEducacional("Trabalhando com Coleções", 100)
+
+    // formação
+    val formacaoKotlin = Formacao(
+        nome = "Formação para Kotlin",
+        nivel = Nivel.INTERMEDIARIO,
+        conteudos = listOf(kotlinBasico, pooKotlin, colecoesKotlin)
+    )
+
+    // alunos
+    val usuario1 = Usuario("AlunoDio1")
+    val usuario2 = Usuario("AlunoDio2")
+    val usuario3 = Usuario("AlunoDio3")
+
+    // fazendo a matrícula de cada aluno
+    formacaoKotlin.matricular(usuario1)
+    formacaoKotlin.matricular(usuario2)
+    formacaoKotlin.matricular(usuario3)
+
+    // listando os alunos
+    formacaoKotlin.listarInscritos()
 }
