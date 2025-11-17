@@ -58,4 +58,10 @@ fun main() {
 
     // listando os alunos
     formacaoKotlin.listarInscritos()
+
+    // exibindo os conteúdos
+    println("\nConteúdos da formação ${formacaoKotlin.nome}:")
+    formacaoKotlin.conteudos.forEach { // forEach para lista um por um
+        println("- ${it.nome} (${it.duracao} min)")
+    }
 }
