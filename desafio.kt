@@ -24,6 +24,12 @@ data class Formacao(
         inscritos.add(usuario)
         println("Usuário ${usuario.nome} matriculado na formação $nome.")
     }
+
+    // lista o alunos inscritos
+    fun listarInscritos() {
+        println("Inscritos na formação $nome:")
+        inscritos.forEach { println("- ${it.nome}") }
+    }
 }
 
 fun main() {
